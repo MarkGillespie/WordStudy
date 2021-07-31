@@ -12,11 +12,12 @@
     filter: drop-shadow(0 0 0.2rem #0003);
 }
 
-
 body {
     text-align: center;
     padding: 0;
     margin: 0;
+    background-color: #eef;
+    font-size: 20pt;
 }
 
 #word {
@@ -29,7 +30,6 @@ body {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     height: 1em;
-    font-size: 20pt;
 }
 
 #result.correct {
@@ -42,5 +42,48 @@ body {
     color: #fdd;
 }
 
+#history {
+    overflow-y: scroll;
+    max-height: 50%;
+    display: inline-block;
+    text-align: left;
+}
+
+.history_entry .correctness{
+    width: 1em;
+    display: inline-block;
+}
+
+.history_entry.h_correct .correctness{
+    color: #383;
+}
+
+.history_entry.h_incorrect .correctness{
+    color: #833;
+}
+
+.history_entry .word {
+    width: 2em;
+    display: inline-block;
+    font-family: monospace;
+}
+
 #controls {
+    position: fixed;
+    bottom: 1em;
+    width: 100%;
+}
+
+#controls button {
+    font-size: 20pt;
+}
+
+#contents {
+    height: 100%;
+    width: 800px;
+    max-width: 100%;
+    display: inline-block;
+    background-color: #fff;
+    filter: drop-shadow(0 0 0.2rem #0003);
+    overflow: hidden;
 }
