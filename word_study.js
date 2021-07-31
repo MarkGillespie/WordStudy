@@ -68,13 +68,14 @@ function add_current_word_to_history(got_correct) {
   word_span.innerHTML = current_word;
   word_span.classList.add("word");
 
-  const validity_span = document.createElement("span");
-  validity_span.innerHTML = "(" + (is_valid ? "" : "not ") + "valid)";
-  validity_span.classList.add("validity");
+  console.log(twos_data);
+  const definition_div = document.createElement("div");
+  definition_div.innerHTML = is_valid ? twos_data[current_word].def : "";
+  definition_div.classList.add("definition");
 
   history_entry.appendChild(correctness_span);
   history_entry.appendChild(word_span);
-  history_entry.appendChild(validity_span);
+  history_entry.appendChild(definition_div);
 
   history_entry.classList.add("history_entry");
   history_entry.classList.add(is_valid ? "h_valid" : "h_invalid");

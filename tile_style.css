@@ -47,6 +47,12 @@ body {
     max-height: 50%;
     display: inline-block;
     text-align: left;
+    margin: 1em;
+}
+
+.history_entry {
+    display: flex;
+    flex-direction: horizontal;
 }
 
 .history_entry .correctness{
@@ -55,17 +61,29 @@ body {
 }
 
 .history_entry.h_correct .correctness{
-    color: #383;
+    color: #131;
 }
 
 .history_entry.h_incorrect .correctness{
-    color: #833;
+    color: #311;
 }
 
 .history_entry .word {
     width: 2em;
     display: inline-block;
     font-family: monospace;
+}
+
+.history_entry.h_valid .word{
+    color: #383;
+}
+
+.history_entry.h_invalid .word{
+    color: #833;
+}
+
+.history_entry .definition {
+    display: inline-block;
 }
 
 #controls {
