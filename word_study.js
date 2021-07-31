@@ -129,4 +129,12 @@ document.getElementById("No").onclick = () => {
   process_input(false);
 };
 
+document.addEventListener("keydown", (event) => {
+  if (event.key == "y" || event.key == "Y") {
+    process_input(true);
+  } else if (event.key == "n" || event.key == "N") {
+    process_input(false);
+  }
+});
+
 new_word();
