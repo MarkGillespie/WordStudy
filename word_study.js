@@ -7,7 +7,7 @@ const vowels = [ "A", "E", "I", "O", "U", "Y" ];
 const consonants = [ "B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Z" ];
 
 // prettier-ignore
-const valid_2 = [ "AA", "AB", "AD", "AE", "AG", "AH", "AI", "AL", "AM", "AN", "AR", "AS", "AT", "AW", "AX", "AY", "BA", "BE", "BI", "BO", "BY", "DA", "DE", "DO", "ED", "EF", "EH", "EL", "EM", "EN", "ER", "ES", "ET", "EW", "EX", "FA", "FE", "GI", "GO", "HA", "HE", "HI", "HM", "HO", "ID", "IF", "IN", "IS", "IT", "JO", "KA", "KI", "LA", "LI", "LO", "MA", "ME", "MI", "MM", "MO", "MU", "MY", "NA", "NE", "NO", "NU", "OD", "OE", "OF", "OH", "OI", "OK", "OM", "ON", "OP", "OR", "OS", "OW", "OX", "OY", "PA", "PE", "PI", "PO", "QI", "RE", "SH", "SI", "SO", "TA", "TE", "TI", "TO", "UH", "UM", "UN", "UP", "US", "UT", "WE", "WHO", "XI", "XI", "YA", "YE", "YO", "ZA" ];
+const valid_2 = Object.keys(twos_data);
 
 let all_2 = [];
 for (const v of vowels) {
@@ -20,6 +20,13 @@ for (const v of vowels) {
     all_2.push(v + c);
   }
 }
+
+// I think we just have to add SH, MM, HM
+for (const valid_word of valid_2) {
+  if (!all_2.includes(valid_word)) all_2.push(valid_word);
+}
+console.log(valid_2);
+console.log(all_2);
 
 const word_area = document.getElementById("word");
 const result_area = document.getElementById("result");
