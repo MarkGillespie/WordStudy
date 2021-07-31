@@ -115,7 +115,11 @@ function grade_response(got_correct, correct_answer) {
 }
 
 function new_word() {
-  current_word = all_2[Math.floor(Math.random() * all_2.length)];
+  const old_word = current_word;
+  // don't pick the same word again!
+  while (current_word == old_word) {
+    current_word = all_2[Math.floor(Math.random() * all_2.length)];
+  }
   display(current_word);
 }
 
