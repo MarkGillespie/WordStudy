@@ -73,7 +73,6 @@ function add_current_word_to_history(got_correct) {
   word_span.innerHTML = current_word;
   word_span.classList.add("word");
 
-  console.log(twos_data);
   const definition_div = document.createElement("div");
   definition_div.innerHTML = is_valid ? twos_data[current_word].def : "";
   definition_div.classList.add("definition");
