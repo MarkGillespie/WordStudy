@@ -83,7 +83,9 @@ body {
 }
 
 .history_entry .definition {
-    display: inline-block;
+    display: flex;
+    align-items:center; /* vertically-center text */
+    font-size: 16pt;
 }
 
 #controls {
