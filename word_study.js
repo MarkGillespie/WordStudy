@@ -131,9 +131,10 @@ document.getElementById("No").onclick = () => {
 };
 
 document.addEventListener("keydown", (event) => {
-  if (event.key == "y" || event.key == "Y") {
+  const letter = event.key.toUpperCase();
+  if (letter == "Y" || letter == "J") {
     process_input(true);
-  } else if (event.key == "n" || event.key == "N") {
+  } else if (letter == "N" || letter == "K") {
     process_input(false);
   }
 });
