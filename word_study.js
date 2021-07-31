@@ -25,8 +25,6 @@ for (const v of vowels) {
 for (const valid_word of valid_2) {
   if (!all_2.includes(valid_word)) all_2.push(valid_word);
 }
-console.log(valid_2);
-console.log(all_2);
 
 const word_area = document.getElementById("word");
 const result_area = document.getElementById("result");
