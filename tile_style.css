@@ -1,15 +1,19 @@
 .letter_tile {
-    display: inline-block;
+    /* display: inline-block; */
     background-color: #eef;
     font-size: 46pt;
-    height: 0.9em;
+    height: 1.2em;
     width: 0.8em;
     padding: 0.2em;
+    padding-bottom: 0.05em;
     margin: 0.1em;
     border-radius: 0.1em;
     text-align: center;
     font-family: sans-serif;
     filter: drop-shadow(0 0 0.2rem #0003);
+    display: flex;
+    align-items: center; /* vertically-center text */
+    justify-content: center;
 }
 
 body {
@@ -22,6 +26,9 @@ body {
 
 #word {
     margin-top: 1em;
+    display: flex;
+    flex-direction: horizontal;
+    justify-content: center;
 }
 
 #result {
@@ -92,15 +99,30 @@ body {
 #controls {
     position: fixed;
     bottom: 0;
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
+    height: 1.5em;
     padding-top: 0.5em;
     width: 100%;
     background-color: #fafaff;
     filter: drop-shadow(0 0 0.1rem #0003);
+    display: flex;
+    align-content: space-between;
+    align-items: center;
+}
+
+#control_buttons {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #controls button {
     font-size: 20pt;
+}
+
+#successes {
+    display: inline-block;
+    margin-left: 2em;
 }
 
 #contents {

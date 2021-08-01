@@ -26,10 +26,16 @@ for (const valid_word of valid_2) {
   if (!all_2.includes(valid_word)) all_2.push(valid_word);
 }
 
+//== Store handles to the useful divs
 const word_area = document.getElementById("word");
 const result_area = document.getElementById("result");
 const history_area = document.getElementById("history");
+const score_area = document.getElementById("successes");
+
+//== Store state in a bunch of global variables
 let current_word = "";
+let total_responses = 0;
+let correct_responses = 0;
 
 function check_current_word_is_valid() {
   return valid_2.includes(current_word);
@@ -128,6 +134,10 @@ function process_input(is_word) {
   const got_correct = is_word == correct_answer;
   grade_response(got_correct, correct_answer);
   add_current_word_to_history(got_correct);
+  if (got_correct) correct_responses++;
+  total_responses++;
+  score_area.innerHTML = correct_responses + "/" + total_responses;
+
   setTimeout(new_word, 50);
 }
 
